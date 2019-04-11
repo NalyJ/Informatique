@@ -12,22 +12,27 @@ window.onload = function () {
 	// il reste des images à permuter
 	let not_finished = true;
 
+//case à cocher
+
+ 
 	// traîte le clic sur une image
+
+
 	function click_on() {
 		if (not_finished) {
 			if (first_click) {
 				first_image = this;
 				first_click = false;
 			} else {
-				first_click = true;
-				let src = first_image.src;
-				first_image.src = this.src;
-				this.src = src;
+					first_click = true;
+					let src = first_image.src;
+					first_image.src = this.src;
+					this.src = src;
 
-				let name = first_image.name;
-				first_image.name = this.name;
-				this.name = name;
-			}
+					let name = first_image.name;
+					first_image.name = this.name;
+					this.name = name;
+				}
 			if (is_finished()) {
 				let result = document.querySelector("#result");
 				result.style.visibility = "visible";
@@ -35,6 +40,7 @@ window.onload = function () {
 			}
 		}
 	}
+
 
 	// teste si le puzzle est terminé
 	function is_finished() {
@@ -50,4 +56,5 @@ window.onload = function () {
 	let imgs = document.querySelector("#puzzle").querySelectorAll("img");
 	for ( let i = 0; i < imgs.length; i++ )
 		imgs[i].onclick = click_on;
+
 };
